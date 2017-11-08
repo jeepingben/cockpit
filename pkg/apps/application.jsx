@@ -59,6 +59,14 @@ class Application extends React.Component {
             action(PackageKit.remove, comp.file, _("Removing"));
         }
 
+        function render_homepage_link(urls) {
+            return urls.map(url => {
+                if (url.type == 'homepage') {
+                    return <a href={url.link} target="_blank" data-linkedhost={url.link}>Homepage</a>;
+                }
+            });
+        }
+
         // Render a description in the form returned by the AppsSream
         // parser, which is a list of paragraphs and lists.
 
@@ -74,7 +82,7 @@ class Application extends React.Component {
             });
         }
 
-        // Render the icon, name, summary, description, and screenshots of the component,
+        // Render the icon, name, homepage link, summary, description, and screenshots of the component,
         // plus the UI for installing and removing it.
 
         function render_comp() {
@@ -109,6 +117,7 @@ class Application extends React.Component {
                             </tr>
                         </tbody>
                     </table>
+                    <div className="app-links">{render_homepage_link(comp.urls)}</div>
                     <div className="app-description">{render_description(comp.description)}</div>
                     <center>
                         { comp.screenshots.map(s => <img className="app-screenshot" src={s.full}/>) }
