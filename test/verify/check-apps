@@ -36,6 +36,7 @@ class TestApps(PackageCase):
   <extends>cockpit.desktop</extends>
   <id>org.cockpit-project.{0}</id>
   <name>{0}</name>
+  <url type="homepage">https://{0}</url>
   <summary>An application for testing</summary>
             <launchable type="cockpit-manifest">{0}</launchable>
 </component>
@@ -81,6 +82,10 @@ class TestApps(PackageCase):
 
         self.createAppStreamPackage("app-1", "1.0", "1")
         self.enableAppStreamRepo()
+
+        b.click(".app-list tr:contains('An application for testing')")
+        b.wait_present(".app-links div:contains('<a href=\"https://app-1.com\" target=\"_blank\" data-linkedhost=\"https://app-1.com\">Homepage</a>')")
+        b.click(".breadcrumb a:contains('Applications'")
 
         b.wait_present(".app-list tr:contains('app-1') button:contains('Install')")
 
