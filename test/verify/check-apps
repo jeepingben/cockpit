@@ -36,7 +36,6 @@ class TestApps(PackageCase):
   <extends>cockpit.desktop</extends>
   <id>org.cockpit-project.{0}</id>
   <name>{0}</name>
-  <url type="homepage">https://{0}</url>
   <summary>An application for testing</summary>
             <launchable type="cockpit-manifest">{0}</launchable>
 </component>
@@ -53,6 +52,7 @@ class TestApps(PackageCase):
     <name>{0}</name>
     <summary>An application for testing</summary>
     <launchable type="cockpit-manifest">{0}</launchable>
+    <url type="homepage">https://{0}</url>
     <pkgname>{0}</pkgname>
   </component>
 """.format(p)
