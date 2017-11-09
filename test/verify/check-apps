@@ -52,6 +52,9 @@ class TestApps(PackageCase):
     <name>{0}</name>
     <summary>An application for testing</summary>
     <launchable type="cockpit-manifest">{0}</launchable>
+    <description>
+        <p>DESCRIPTION:none</p>
+    </description>
     <url type="homepage">https://{0}</url>
     <pkgname>{0}</pkgname>
   </component>
