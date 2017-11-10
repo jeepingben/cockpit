@@ -62,7 +62,10 @@ class Application extends React.Component {
         function render_homepage_link(urls) {
             return urls.map(url => {
                 if (url.type == 'homepage') {
-                    return <a href={url.link} class="fa-external-link" target="_blank" rel="noopener" data-linkedhost={url.link}>View Project Website</a>;
+                    return (<div className="app-links">
+                                <a href={url.link} target="_blank" rel="noopener" data-linkedhost={url.link}>View Project Website</a>
+                                <i className="fa fa-external-link" aria-hidden="true"></i>
+                            </div>);
                 }
             });
         }
@@ -117,7 +120,7 @@ class Application extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <div className="app-links">{render_homepage_link(comp.urls)}</div>
+                    {render_homepage_link(comp.urls)}
                     <div className="app-description">{render_description(comp.description)}</div>
                     <center>
                         { comp.screenshots.map(s => <img className="app-screenshot" src={s.full}/>) }
