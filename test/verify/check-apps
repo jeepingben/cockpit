@@ -88,7 +88,7 @@ class TestApps(PackageCase):
 
         b.wait_present(".app-list tr:contains('An application for testing')")
         b.click(".app-list tr:contains('An application for testing')")
-        b.wait_present(".app-links div:contains('<a href=\"https://app-1.com\" target=\"_blank\" rel=\"noopener\" data-linkedhost=\"https://app-1.com\">Visit Project Website</a>')")
+        b.wait_present('.app-links a[href="https://app-1.com"]')
         b.wait_present(".breadcrumb a:contains('Applications'")
         b.click(".breadcrumb a:contains('Applications'")
 
