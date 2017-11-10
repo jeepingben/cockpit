@@ -62,7 +62,7 @@ class Application extends React.Component {
         function render_homepage_link(urls) {
             return urls.map(url => {
                 if (url.type == 'homepage') {
-                    return <a href={url.link} target="_blank" rel="noopener" data-linkedhost={url.link}>Homepage</a>;
+                    return <a href={url.link} class="fa-external-link" target="_blank" rel="noopener" data-linkedhost={url.link}>View Project Website</a>;
                 }
             });
         }
