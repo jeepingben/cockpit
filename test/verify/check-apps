@@ -55,7 +55,7 @@ class TestApps(PackageCase):
     <description>
         <p>DESCRIPTION:none</p>
     </description>
-    <url type="homepage">https://{0}</url>
+    <url type="homepage">https://{0}.com</url>
     <pkgname>{0}</pkgname>
   </component>
 """.format(p)
