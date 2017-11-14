@@ -141,7 +141,7 @@ def convert_cached_icon(dir, origin, xml):
         path = os.path.join(dir, "..", "icons", origin, sz, icon)
         return path if os.path.exists(path) else None
 
-    return try_size("64x64") or try_size("128x128")
+    return try_size("scalable") or try_size("64x64") or try_size("128x128")
 
 def convert_remote_icon(xml):
     url = xml.text
